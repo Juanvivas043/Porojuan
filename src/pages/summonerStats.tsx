@@ -7,7 +7,7 @@ import { useParams } from 'react-router-dom';
 
 export default function SummonerStatsPage() {
     const { gameName, tagLine } = useParams();
-    const { summonerAccountData, summonerLeaguesData, summonerMatchesListData, loading } = useFetchData({ gameName: gameName, tagLine: tagLine })
+    const { summonerAccountData, summonerLeaguesData, summonerMatchesListData, loading } = useFetchData({ gameName: gameName as string, tagLine: tagLine as string })
 
     return (
         <div>
