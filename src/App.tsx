@@ -12,6 +12,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/summoner/:gameName/:tagLine" element={<SummonerStatsPage />} />
+        {/* <Route path="/*" element={<ErrorPage />} /> */}
       </Routes>
     </BrowserRouter>
 
