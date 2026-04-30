@@ -5,7 +5,12 @@ export function parseLeagueData({ data, queueType}: {data: summonerLeagues[], qu
 
     if (!league) {
         return {
-            ...league,
+            freshBlood: false,
+            hotStreak: false,
+            inactive: false,
+            leagueId: "",
+            queueType: queueType,
+            veteran: false,
             tier: "UNRANKED",
             rank: "",
             leaguePoints: 0,

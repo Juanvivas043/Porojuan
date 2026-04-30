@@ -14,7 +14,7 @@ export function SummonerMatchesHistoryComponent({ summonerMatchesListData, summo
 
                         {/* Game Info */}
                         <div className="flex flex-col items-center lg:items-start gap-1 w-full lg:w-1/4">
-                            <p className="font-bold text-white text-lg lg:text-base">Clasificatoria {queueTranslations[match.info.queueId]}</p>
+                            <p className="font-bold text-white text-lg lg:text-base">Clasificatoria {queueTranslations[match.info.queueId as keyof typeof queueTranslations]}</p>
                             <p className="font-semibold text-white/60 text-sm">{match.info.gameDate}</p>
                             <p className="font-semibold text-white/60 text-sm">{match.info.gameDurationParsed}</p>
                         </div>
@@ -29,19 +29,19 @@ export function SummonerMatchesHistoryComponent({ summonerMatchesListData, summo
                                         </div>
                                         <div className="flex flex-col gap-1">
                                             <div className="h-7 w-7 sm:h-7 sm:w-7 md:h-7 md:w-7 shrink-0">
-                                                <img className="w-full h-full rounded-full object-cover" src={`http://ddragon.leagueoflegends.com/cdn/${versionDD}/img/spell/${spells[p.summoner1Id]}.png`} />
+                                                <img className="w-full h-full rounded-full object-cover" src={`http://ddragon.leagueoflegends.com/cdn/${versionDD}/img/spell/${spells[p.summoner1Id as keyof typeof spells]}.png`} />
                                             </div>
                                             <div className="h-7 w-7 sm:h-7 sm:w-7 md:h-7 md:w-7 shrink-0">
-                                                <img className="w-full h-full rounded-full object-cover" src={`http://ddragon.leagueoflegends.com/cdn/${versionDD}/img/spell/${spells[p.summoner2Id]}.png`} />
+                                                <img className="w-full h-full rounded-full object-cover" src={`http://ddragon.leagueoflegends.com/cdn/${versionDD}/img/spell/${spells[p.summoner2Id as keyof typeof spells]}.png`} />
                                             </div>
                                         </div>
 
                                         <div className="flex flex-col gap-1">
                                             <div className="h-7 w-7 sm:h-7 sm:w-7 md:h-7 md:w-7 shrink-0">
-                                                <img className="w-full h-full rounded-full object-cover" src={`https://ddragon.leagueoflegends.com/cdn/img/${keyStoneRunes[p.perks.styles[0].selections[0].perk]}`} />
+                                                <img className="w-full h-full rounded-full object-cover" src={`https://ddragon.leagueoflegends.com/cdn/img/${keyStoneRunes[p.perks.styles[0].selections[0].perk as keyof typeof keyStoneRunes]}`} />
                                             </div>
                                             <div className="h-7 w-7 sm:h-7 sm:w-7 md:h-7 md:w-7 shrink-0">
-                                                <img className="w-full h-full rounded-full object-cover" src={`https://ddragon.leagueoflegends.com/cdn/img/${runes[p.perks.styles[1].style]}`} />
+                                                <img className="w-full h-full rounded-full object-cover" src={`https://ddragon.leagueoflegends.com/cdn/img/${runes[p.perks.styles[1].style as keyof typeof runes]}`} />
                                             </div>
                                         </div>
 
