@@ -10,7 +10,7 @@ export function SummonerMatchesHistoryComponent({ summonerMatchesListData, summo
         <section className='bg-zinc-800 w-full text-white p-4 sm:p-6 md:p-8 rounded-2xl shadow-zinc-950 shadow-lg'>
             <div className='flex flex-col gap-4 w-full'>
                 {summonerMatchesListData.map((match) => (
-                    <div key={match.info.gameId} className='flex flex-col lg:flex-row items-center justify-between gap-4 md:gap-6 bg-zinc-900 p-4 sm:p-6 rounded-xl shadow-zinc-950 shadow-lg hover:scale-[1.01] transition-transform duration-300 ease-in-out'>
+                    <div key={match.info.gameId} className={`flex flex-col lg:flex-row items-center justify-between gap-4 md:gap-6 p-4 sm:p-6 rounded-xl shadow-zinc-950 shadow-lg hover:scale-[1.01] transition-transform duration-300 ease-in-out ${match.info.participants.filter((p) => p.puuid === summonerPuuid)[0].win ? 'bg-blue-400/30' : 'bg-red-400/30'}`}>
 
                         {/* Game Info */}
                         <div className="flex flex-col items-center lg:items-start gap-1 w-full lg:w-1/4">
