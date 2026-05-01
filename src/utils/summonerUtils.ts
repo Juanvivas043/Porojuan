@@ -1,6 +1,15 @@
 import type { riotAccount, summonerAccount } from "../types/definitions"
 
 export function parseRiotAccountData({ data }: { data: riotAccount }): riotAccount {
+
+    if (data.puuid === undefined || data.puuid === null) {
+        return {
+            puuid: "",
+            gameName: "",
+            tagLine: "",
+        }
+    }
+
     return {
         puuid: data.puuid,
         gameName: data.gameName,

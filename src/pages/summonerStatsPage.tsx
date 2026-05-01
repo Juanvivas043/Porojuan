@@ -5,7 +5,7 @@ import { SummonerLeagueComponent } from "../components/summonerLeague"
 import { SummonerMatchesHistoryComponent } from "../components/summonerMatchesHistory"
 import { useParams } from 'react-router-dom';
 
-export default function SummonerStatsPage() {
+export function SummonerStatsPage() {
     const { gameName, tagLine } = useParams();
     const { summonerAccountData, summonerLeaguesData, summonerMatchesListData, loading } = useFetchData({ gameName: gameName as string, tagLine: tagLine as string })
 

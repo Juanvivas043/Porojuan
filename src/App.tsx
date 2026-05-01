@@ -1,9 +1,8 @@
-import SummonerStatsPage from "./pages/summonerStats"
-import HomePage from "./pages/homePage"
+import { SummonerStatsPage } from "./pages/summonerStatsPage"
+import { HomePage } from "./pages/homePage"
+import { SummonerNotFound } from "./pages/summonerNotFound"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
-//seiros azir
-//juan wjf0
-//fallout lan
+import { ErrorPage } from "./pages/errorPage"
 
 function App() {
 
@@ -12,7 +11,8 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/summoner/:gameName/:tagLine" element={<SummonerStatsPage />} />
-        {/* <Route path="/*" element={<ErrorPage />} /> */}
+        <Route path="*" element={<ErrorPage />} />
+        <Route path="/summonernotfound" element={<SummonerNotFound />} />
       </Routes>
     </BrowserRouter>
 
