@@ -3,7 +3,7 @@ import { useState } from "react"
 
 export function HomePage() {
     const navigate = useNavigate()
-    const [search, setSearch] = useState(null)
+    const [search, setSearch] = useState<string | null>(null)
 
     const handleSearch = ((e: React.FormEvent<HTMLButtonElement>) => {
         e.preventDefault()
