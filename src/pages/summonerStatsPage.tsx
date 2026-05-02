@@ -1,5 +1,5 @@
 import { SkeletonSummonerPage } from "../components/skeletonSummonerPage"
-import { useFetchData } from "../hooks/useFetchData"
+import { useFetchSummonerData } from "../hooks/useFetchSummonerData"
 import { SummonerProfileComponent } from "../components/summonerProfile"
 import { SummonerLeagueComponent } from "../components/summonerLeague"
 import { SummonerMatchesHistoryComponent } from "../components/summonerMatchesHistory"
@@ -7,7 +7,7 @@ import { useParams } from 'react-router-dom';
 
 export function SummonerStatsPage() {
     const { gameName, tagLine } = useParams();
-    const { summonerAccountData, summonerLeaguesData, summonerMatchesListData, loading } = useFetchData({ gameName: gameName as string, tagLine: tagLine as string })
+    const { summonerAccountData, summonerLeaguesData, summonerMatchesListData, loading } = useFetchSummonerData({ gameName: gameName as string, tagLine: tagLine as string })
 
     return (
         <div>

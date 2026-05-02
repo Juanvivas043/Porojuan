@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react"
+import { useNavigate } from "react-router"
 import type { riotAccount, summonerAccount, summonerLeagues, summonerMatch } from "../types/definitions"
 import { getRiotAccountByName, getSummonerAccountByPuuid } from "../services/summonerService"
 import { getSummonerLeaguesByPuuid } from "../services/leagueService"
 import { getSummonerMatchesListByPuuid } from "../services/matchService"
-import { useNavigate } from "react-router"
 
-
-export function useFetchData({ gameName, tagLine }: { gameName: string, tagLine: string }) {
+export function useFetchSummonerData({ gameName, tagLine }: { gameName: string, tagLine: string }) {
     const navigate = useNavigate()
     const [riotAccountData, setRiotAccountData] = useState<riotAccount | null>(null)
     const [summonerAccountData, setSummonerAccountData] = useState<summonerAccount | null>(null)
@@ -15,9 +14,9 @@ export function useFetchData({ gameName, tagLine }: { gameName: string, tagLine:
     const [loading, setLoading] = useState(true)
 
     useEffect(() => {
+
         async function fetchData() {
             const riotAcc = await getRiotAccountByName({ gameName, tagLine })
-            console.log(riotAcc)
 
             if (!riotAcc.puuid) {
                 navigate('/summonernotfound')
@@ -34,17 +33,18 @@ export function useFetchData({ gameName, tagLine }: { gameName: string, tagLine:
             setSummonerMatchesListData(matchesList)
 
             setLoading(false)
-        }
 
+        }
         fetchData()
 
     }, [gameName, tagLine, navigate])
+
 
     return {
         riotAccountData,
         summonerAccountData,
         summonerLeaguesData,
         summonerMatchesListData,
-        loading,
+        loading
     }
 }

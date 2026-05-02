@@ -219,3 +219,14 @@ export interface participants {
     wardsPlaced: number,
     win: boolean,
 }
+
+export interface StaticData {
+    version: string;
+    runes: {
+        [key: number]: string
+    };
+    spells: {
+        [key: number]: string
+    };
+    loading: boolean;
+}

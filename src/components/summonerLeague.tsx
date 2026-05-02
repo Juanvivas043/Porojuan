@@ -1,5 +1,5 @@
 import type { summonerLeagues } from "../types/definitions"
-import { rankTranslation } from "../types/constants"
+import { rankTranslation } from "../types/translate"
 
 export function SummonerLeagueComponent({ summonerLeagueSoloDuoData, summonerLeagueFlexData }: { summonerLeagueSoloDuoData: summonerLeagues, summonerLeagueFlexData: summonerLeagues }) {
     return (

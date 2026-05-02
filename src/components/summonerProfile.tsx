@@ -1,17 +1,17 @@
 import type { summonerAccount } from "../types/definitions"
 import { useNavigate } from "react-router-dom"
-
-const versionDD = '16.9.1';
+import { useStaticData } from "../hooks/useStaticData"
 
 export function SummonerProfileComponent({ summonerAccountData }: { summonerAccountData: summonerAccount }) {
     const navigate = useNavigate();
+    const staticData = useStaticData();
 
     return (
         <section className='w-full flex flex-col'>
             <div className='bg-zinc-800 flex flex-col md:flex-row items-center justify-between gap-5 p-6 md:p-10 rounded-2xl shadow-zinc-950 shadow-lg'>
                 <div className="flex flex-row items-center gap-5 w-full md:w-auto justify-center md:justify-start">
                     <div className='flex items-center gap-5'>
-                        <img className='h-25 w-25 rounded-2xl' src={`http://ddragon.leagueoflegends.com/cdn/${versionDD}/img/profileicon/${summonerAccountData.profileIconId}.png`} alt="" />
+                        <img className='h-25 w-25 rounded-2xl' src={`http://ddragon.leagueoflegends.com/cdn/${staticData?.version}/img/profileicon/${summonerAccountData.profileIconId}.png`} alt="" />
                     </div>
                     <div className='flex flex-col items-start gap-2'>
                         <p className='text-white text-xl font-semibold'>{summonerAccountData.name} <span className='text-zinc-400 text-md font-semibold'>LAN</span></p>
